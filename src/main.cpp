@@ -2,7 +2,8 @@
 
 const int microphonePin = A0;
 
-
+float sine(int i);
+float cosine(int i);
 
 //Example data:
 int data[64]={14, 30, 35, 34, 34, 40, 46, 45,  30, 4,  -26,  -48,  -55,  -49,  -37,
@@ -35,59 +36,67 @@ void setup()
 void loop()
 {
 
-
-//for(int n = 0; n < 64; n++){
-
-buffShift(data,64);
+  Serial.println(analogRead(microphonePin));
 
 
-int val = analogRead(microphonePin);
-
-data[0] = val;
-
-Serial.println(val);
-
-//for(int i = 0; i < 64; i++)
-//{
-//  Serial.print(data[i]);
-//  Serial.print(",");
-//}
-
-Serial.println();
-
-FFT(data,64,100);        //to  get top five value of frequencies of X having 64 sample at 100Hz sampling
-Serial.print("=====> ");
-Serial.print(f_peaks[0]);
-Serial.print(", ");
-Serial.print(f_peaks[1]);
-Serial.println();
-
-
-//
-//for(int i = 0; i < 64; i++)
-//{
-//  Serial.print(data[i]);
-//  Serial.print(", ");
-//}
-//
-//Serial.println();
-//
-//}
-
-//while(true){}
-
-  /*
-  //example
-  FFT(data,64,100);        //to  get top five value of frequencies of X having 64 sample at 100Hz sampling
-  Serial.println(f_peaks[0]);
-  Serial.println(f_peaks[1]);
-  delay(99999);
-  */
-
-  /*
-  after ruing above FFT(), frequencies available at f_peaks[0],f_peaks[1],f_peaks[2],f_peaks[3],f_peaks[4],
-  */
 }
+
+
+
+
+// //for(int n = 0; n < 64; n++){
+
+// buffShift(data,64);
+
+
+// int val = analogRead(microphonePin);
+
+// data[0] = val;
+
+// Serial.println(val);
+
+// //for(int i = 0; i < 64; i++)
+// //{
+// //  Serial.print(data[i]);
+// //  Serial.print(",");
+// //}
+
+// Serial.println();
+
+// FFT(data,64,100);        //to  get top five value of frequencies of X having 64 sample at 100Hz sampling
+// Serial.print("=====> ");
+// Serial.print(f_peaks[0]);
+// Serial.print(", ");
+// Serial.print(f_peaks[1]);
+// Serial.println();
+
+
+// //
+// //for(int i = 0; i < 64; i++)
+// //{
+// //  Serial.print(data[i]);
+// //  Serial.print(", ");
+// //}
+// //
+// //Serial.println();
+// //
+// //}
+
+// //while(true){}
+
+//   /*
+//   //example
+//   FFT(data,64,100);        //to  get top five value of frequencies of X having 64 sample at 100Hz sampling
+//   Serial.println(f_peaks[0]);
+//   Serial.println(f_peaks[1]);
+//   delay(99999);
+//   */
+
+  
+//   // after ruing above FFT(), frequencies available at f_peaks[0],f_peaks[1],f_peaks[2],f_peaks[3],f_peaks[4],
+  
+// }
+
 
 
 
